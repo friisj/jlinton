@@ -1,0 +1,27 @@
+{embed='partials/head'}
+  
+  <body class="jl-project">
+    
+    <div class="container">
+    
+    {embed='partials/header'}
+    
+    <ul class="project-index inactive">
+      {exp:channel:entries channel="project"}
+      <li>
+        <a href="/project/{url_title}" class="clearfix project h2">
+          <span class="checkbox"></span>
+          <span class="client">{project-client}</span>
+          <span class="title">{title}</span>
+        </a>
+      </li>
+      {/exp:channel:entries}
+    </ul>
+    
+    </div>
+    
+    {embed='partials/footer'}
+    
+  </body>
+  
+</html>

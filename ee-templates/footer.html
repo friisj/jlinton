@@ -1,0 +1,22 @@
+<footer class="hidden">
+    <h4><a href="#" class="toggle-footer">Info &amp; Contact</a></h4>
+    <div class="clearfix info-container">
+        {exp:channel:entries channel="info" limit="1" dynamic="off"}
+        <div class="column bio">
+        {info-bio}
+        <h4 class="credit">Website by<br><a href="http://showgroup.ca" target="_blank">Show Group</a></h4>
+        </div>
+        <div class="column contact test">
+        <ul class="clearfix">
+            <li class="split h4"><a href="mailto:{info-email}">Email</a></li>
+            <li class="split h4"><a href="{info-resume}">Download CV</a></li>
+            <li class="h4"><a href="{info-twitter}" target="_blank">Twitter</a></li>
+            <li class="h4"><a href="{info-instagram}" target="_blank">Instagram</a></li>
+            <li class="h4"><a href="{info-linkedin}" target="_blank">LinkedIn</a></li>
+        </ul>
+        </div>
+        {/exp:channel:entries}
+    </div>
+    <a href="#" class="toggle-footer close-helper-left">&nbsp;</a>
+    <a href="#" class="toggle-footer close-helper-right">&nbsp;</a>
+</footer>

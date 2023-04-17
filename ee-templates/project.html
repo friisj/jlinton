@@ -1,0 +1,57 @@
+{embed='partials/head'}
+  
+  <body class="jl-project">
+    
+    <div class="container loading">
+    
+    {embed='partials/header'}
+    
+    {exp:channel:entries channel="project" limit="1"}
+    <div class="clearfix project-container">
+      <div class="project-abstract">
+        <h2>{project-client} <em>{title}</em></h2>
+        
+        {project-description}
+        
+      </div>
+      <div class="clearfix project-assets">
+        <div class="column project-media first-col">
+          {if project-vimeo}
+          <h4>Video</h4>
+          <figure class="project-video">
+            <a href="#" style="background-image:url({project-thumb:Small});" class="show-video">
+              <span>{title}</span>
+            </a>
+          </figure>
+          {/if}
+          {if project-images}
+          <h4>Images</h4>
+          <ul class="clearfix project-images">
+            {project-images}
+            <li>
+              <a href="{project-images:image-fullsize}" style="background-image:url({project-images:image-file:Small});"><span>{project-images:image-caption}&nbsp;</span></a></li>
+            {/project-images}
+          </ul>
+          {/if}
+        </div>
+      </div>
+    </div>
+    
+    {if project-vimeo}
+    <div class="video-overlay">
+      <div class="video-frame">
+        <iframe src="//player.vimeo.com/video/{project-vimeo}?color=2a52be&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+      <a href="#" class="close-video">Close</a>
+    </div>
+    {/if}
+    
+    {/exp:channel:entries}
+    
+    </div>
+    
+    {embed='partials/footer'}
+    
+  </body>
+  
+</html>

@@ -1,0 +1,13 @@
+<header>
+    <h1><a href="/"><strong>Jackie Linton</strong><br>A Selected Survey of Copy, Creative and Editorial Work.</a></h1>
+    {if segment_1 == 'project'}
+    <h4 class="project-nav">
+        {exp:channel:next_entry}
+        <a href="/project/{url_title}">Previous Project</a><br>
+        {/exp:channel:next_entry}
+        {exp:channel:prev_entry}
+        <a href="/project/{url_title}">Next Project</a>
+        {/exp:channel:prev_entry}
+    </h4>
+    {/if}
+</header>

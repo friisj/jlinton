@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html style="height:100%">
+  <head>
+    <title>Jackie Linton</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    
+    <script type="text/javascript" src="/scripts/modernizr.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/scripts/layout.js"></script>
+    <script type="text/javascript" src="/scripts/svgcheckbox.js"></script>
+    {if segment_1 == 'project'}
+    <script type="text/javascript" src="/scripts/rebox.js"></script>
+    {/if}
+    
+    <link rel="stylesheet" href="/stylesheets/reset.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/stylesheets/fonts.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/stylesheets/animate.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/stylesheets/layout.css" type="text/css" media="screen" charset="utf-8">
+    {if segment_1 == 'project'}
+    <link rel="stylesheet" href="/stylesheets/project.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/stylesheets/rebox.css" type="text/css" media="screen" charset="utf-8">
+    {/if}
+    
+    {if segment_1 == 'project'}
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function(){
+        $('.container').removeClass('loading');
+        $('.project-container').fadeIn(1000);
+    
+        $('.project-images li a, .project-video a').each(function(){
+          var imgWidth = $(this).width();
+          $(this).height(imgWidth*0.75);
+        });
+        
+        var winWidth = $(window).width();
+        if (winWidth > 600) {
+          $('.project-images').rebox({ selector: 'a' });
+        } else {
+          $('.project-images a').attr('href','javascript:void(0)');
+          $('.project-images a').find('span').remove();
+        }
+      });
+      
+      $(window).resize(function(){
+        $('.project-images li a, .project-video a').each(function(){
+          var imgWidth = $(this).width();
+          $(this).height(imgWidth*0.75);
+        });
+      });
+    </script>
+    {/if}
+  </head>
